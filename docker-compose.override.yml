@@ -1,0 +1,57 @@
+version: '3.4'
+
+services:
+  ms.sql.users.db:
+    container_name: ms.sql.users.db
+    restart: always
+    volumes:
+      - /c/data/docker/text2lesson/sqlserver/users:/var/opt/mssql/data
+    ports:
+      - "1417:1433"
+    environment:
+      SA_PASSWORD: ".123Pass456."
+      ACCEPT_EULA: "Y"
+
+  ms.sql.students.db:
+    container_name: ms.sql.students.db
+    restart: always
+    volumes:
+      - /c/data/docker/text2lesson/sqlserver/students:/var/opt/mssql/data
+    ports:
+      - "1418:1433"
+    environment:
+      SA_PASSWORD: ".123Pass456."
+      ACCEPT_EULA: "Y"
+
+  ms.users.api:
+    container_name: ms.users.api
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - "ConnectionStrings:UserDB:HostName=ms.sql.users.db"
+      - "ConnectionStrings:UserDB:Catalogue=Users"
+      - "ConnectionStrings:UserDB:User=sa"
+      - "ConnectionStrings:UserDB:Password=.123Pass456."
+    ports:
+      - "9010:80"
+    depends_on:
+      - ms.sql.users.db
+
+  ms.students.api:
+    container_name: ms.students.api
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - "ConnectionStrings:StudentDB:HostName=ms.sql.students.db"
+      - "ConnectionStrings:StudentDB:Catalogue=Students"
+      - "ConnectionStrings:StudentDB:User=sa"
+      - "ConnectionStrings:StudentDB:Password=.123Pass456."
+    ports:
+      - "9020:80"
+    depends_on:
+      - ms.sql.students.db
+
+  ms.webspa:
+    container_name: ms.webspa
+    ports:
+      - "4200:80"
+    depends_on:
+      - ms.users.api

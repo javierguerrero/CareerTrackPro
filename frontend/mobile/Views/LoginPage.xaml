@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MusicSchool.Mobile.Views.LoginPage"
+             Shell.NavBarIsVisible="False"
+             Title="LoginPage">
+    <VerticalStackLayout VerticalOptions="Center" Margin="30">
+        <Label Text="Por favor, ingresar los datos para iniciar sesión" />
+        <Entry Placeholder="Correo electrónico" Text="{Binding Email}" />
+        <Entry IsPassword="True" Placeholder="Tu contraseña" Text="{Binding Password}" />
+        <Button Text="Ingresar" Command="{Binding LoginTapCommand}" Margin="10" />
+    </VerticalStackLayout>
+</ContentPage>
