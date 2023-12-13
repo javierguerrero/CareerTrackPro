@@ -4,10 +4,10 @@
 FROM node:latest as build
 
 # Set the working directory
-WORKDIR /usr/local/ms.webspa
+WORKDIR /usr/local/ms.spa
 
 # Add the source code to app
-COPY ./ms.webspa /usr/local/ms.webspa/
+COPY ./ms.spa /usr/local/ms.spa/
 
 # Install all the dependencies
 RUN npm install
@@ -22,10 +22,10 @@ RUN npm run build
 FROM nginx:latest
 
 # Copy the build output to replace the default nginx contents.
-COPY --from=build /usr/local/ms.webspa/dist/web-spa /usr/share/nginx/html
+COPY --from=build /usr/local/ms.spa/dist/web-spa /usr/share/nginx/html
 
 # Expose port 80
 EXPOSE 80
 
 
-# NOTA: La carpeta que contiene el proyecto se llama 'ms.webspa'
+# NOTA: La carpeta que contiene el proyecto se llama 'ms.spa'

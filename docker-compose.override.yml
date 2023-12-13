@@ -49,9 +49,16 @@ services:
     depends_on:
       - ms.sql.students.db
 
-  ms.webspa:
-    container_name: ms.webspa
+  ms.spa:
+    container_name: ms.spa
     ports:
       - "4200:80"
+    depends_on:
+      - ms.users.api
+
+  ms.web:
+    container_name: ms.web
+    ports:
+      - "4300:80"
     depends_on:
       - ms.users.api

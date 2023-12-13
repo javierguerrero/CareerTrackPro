@@ -68,37 +68,52 @@ https://www.figma.com/file/0NCDjQfKfM1PCLkrDYVuWL/Escuela-de-M%C3%BAsica?type=de
 
 ## Deployment
 
-### Despliegue de contenedores en Docker
 
+
+
+## Development
+
+### Levantar entorno de desarrollo
 1. Ingresar a la carpeta raíz del proyecto "MusicSchool"
-2. Abrir consola y ejecutar comando "docker-compose" para levantar contenedores
+2. Abrir consola y ejecutar comando "docker-compose" para el despliegue de contenedores en Docker
 
 ```
 docker-compose -f docker-compose.yml -f docker-compose.override.yml up -d
 ```
 
-3. Ejecutar aplicación web:
+3. Ejecutar aplicaciones cliente:
 
+Dashboard (web)
+```
+http://localhost:4300/
+```
+
+Alumnnos (SPA)
 ```
 http://localhost:4200/
 ```
 
 4. Consultar las APIs:
 
+ms.users.api
 ```
-ms.users.api: http://localhost:9010/swagger
+http://localhost:9010/swagger
 ```
 
+ms.students.api
 ```
-ms.students.api: http://localhost:9020/swagger
+http://localhost:9020/swagger
 ```
 
 5. Connect to a different port with SQL Server Management Studio. Connect using a different port using a comma
+
+ms.sql.users.db
 ```	
-ms.sql.users.db: localhost,1417
+localhost,1417
 ```
 
+ms.sql.students.db
 ```
-ms.sql.students.db: localhost,1418
+localhost,1418
 ```
 

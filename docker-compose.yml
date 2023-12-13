@@ -19,9 +19,14 @@ services:
       context: .
       dockerfile: ms.students/ms.students.api/Dockerfile
 
-  ms.webspa:
-    image: ${DOCKER_REGISTRY-}mswebspa
+  ms.spa:
+    image: ${DOCKER_REGISTRY-}msspa
     build: 
         context: .
-        dockerfile: ms.webspa/Dockerfile
+        dockerfile: ms.spa/Dockerfile
     
+  ms.web:
+    image: ${DOCKER_REGISTRY-}msweb
+    build: 
+        context: .
+        dockerfile: ms.web/ms.web.ui/Dockerfile
