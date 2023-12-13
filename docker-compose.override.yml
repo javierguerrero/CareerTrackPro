@@ -5,7 +5,7 @@ services:
     container_name: ms.sql.users.db
     restart: always
     volumes:
-      - /c/data/docker/text2lesson/sqlserver/users:/var/opt/mssql/data
+      - /c/data/docker/musicschool/sqlserver/users:/var/opt/mssql/data
     ports:
       - "1417:1433"
     environment:
@@ -16,7 +16,7 @@ services:
     container_name: ms.sql.students.db
     restart: always
     volumes:
-      - /c/data/docker/text2lesson/sqlserver/students:/var/opt/mssql/data
+      - /c/data/docker/musicschool/sqlserver/students:/var/opt/mssql/data
     ports:
       - "1418:1433"
     environment:
