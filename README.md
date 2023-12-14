@@ -2,7 +2,7 @@
 
 ## Introduction
 
-![](https://drive.google.com/uc?id=1WkzdFAeVOG7KocJSl7oOvSkv6YS9TxXa)
+![](https://drive.google.com/uc?id=1WkzdFAeVOG7KocJSl7oOvSkv6YS9TxXa_)
 
 ## Context
 
@@ -11,6 +11,8 @@
 ### External Systems
 
 ## Functional Overview
+
+### Administrator
 
 Seguridad
 
@@ -31,12 +33,17 @@ Mantenimiento Ciclo
 - Actualizar ciclo
 - Finalizar ciclo
 - Eliminar ciclo
-
-Mantenimiento Clase
-
 - Agregar clase
 - Actualizar clase
 - Eliminar clase
+
+## Authenticated User
+
+Seguridad
+
+- Inicio de sesión
+- Cerrar sesión
+- Cambiar contraseña
 
 https://www.figma.com/file/0NCDjQfKfM1PCLkrDYVuWL/Escuela-de-M%C3%BAsica?type=design&node-id=0-1&mode=design&t=VXOFeb1Tfw8db5vj-0
 
@@ -68,12 +75,10 @@ https://www.figma.com/file/0NCDjQfKfM1PCLkrDYVuWL/Escuela-de-M%C3%BAsica?type=de
 
 ## Deployment
 
-
-
-
 ## Development
 
 ### Levantar entorno de desarrollo
+
 1. Ingresar a la carpeta raíz del proyecto "MusicSchool"
 2. Abrir consola y ejecutar comando "docker-compose" para el despliegue de contenedores en Docker
 
@@ -84,23 +89,27 @@ docker-compose -f docker-compose.yml -f docker-compose.override.yml up -d
 3. Ejecutar aplicaciones cliente:
 
 Dashboard (web)
+
 ```
 http://localhost:4300/
 ```
 
 Alumnnos (SPA)
+
 ```
 http://localhost:4200/
 ```
 
-4. Consultar las APIs:
+4. Consultar APIs:
 
-ms.users.api
+Users Authentication Api
+
 ```
 http://localhost:9010/swagger
 ```
 
-ms.students.api
+Students Api
+
 ```
 http://localhost:9020/swagger
 ```
@@ -108,12 +117,13 @@ http://localhost:9020/swagger
 5. Connect to a different port with SQL Server Management Studio. Connect using a different port using a comma
 
 ms.sql.users.db
-```	
+
+```
 localhost,1417
 ```
 
 ms.sql.students.db
+
 ```
 localhost,1418
 ```
-
