@@ -4,11 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ms.web.application.Responses
+namespace ms.web.application.HttpCommunications.Responses
 {
-    public class UserResponse
+    public class AuthenticationApiCommunicationResponse
     {
-        public string Username { get; set; }
         public string Token { get; set; }
         public string Expiration { get; set; }
     }

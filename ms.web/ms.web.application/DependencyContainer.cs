@@ -2,7 +2,9 @@
 using MediatR;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using ms.web.application.HttpCommunications;
 using ms.web.application.Mapper;
+using Refit;
 using System.Reflection;
 
 namespace ms.web.application
@@ -21,6 +23,10 @@ namespace ms.web.application
             });
             IMapper mapper = automapperConfig.CreateMapper();
             services.AddSingleton(mapper);
+
+            // Authentication API
+            services.AddRefitClient<IAuthtenticationApiCommunication>()
+                    .ConfigureHttpClient(c => c.BaseAddress = new Uri(configuration.GetSection("Communication:External:AuthenticationApiUrl").Value));
 
             return services;
         }

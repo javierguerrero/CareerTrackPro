@@ -88,7 +88,7 @@ docker-compose -f docker-compose.yml -f docker-compose.override.yml up -d
 
 3. Ejecutar aplicaciones cliente:
 
-Dashboard (web)
+Admin Dashboard (web)
 
 ```
 http://localhost:4300/

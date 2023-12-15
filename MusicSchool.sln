@@ -10,17 +10,12 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ms.students", "ms.students", "{D9066443-EBE1-4AF0-8659-352AC0BE660C}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ms.communications", "ms.communications", "{C8E315F5-6FD0-40CA-95BD-CFE42B6829F0}"
-	ProjectSection(SolutionItems) = preProject
-		ms.communications\ms.rabbitmq\ms.rabbitmq.csproj = ms.communications\ms.rabbitmq\ms.rabbitmq.csproj
-	EndProjectSection
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ms.web", "ms.web", "{9CC3193B-B5A0-4ABF-B54A-932FE66C54B7}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "dashboard", "dashboard", "{9CC3193B-B5A0-4ABF-B54A-932FE66C54B7}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "frontend", "frontend", "{55F4DC60-8CDB-435A-85AB-FEFDFB42448B}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "backend", "backend", "{23EB1FF4-DC8F-4CE7-A670-7539912EB276}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "mobile", "mobile", "{3A42A043-9583-4342-827A-F007D9C0838A}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ms.users.api", "ms.users\ms.users.api\ms.users.api.csproj", "{A86C6508-1FED-47D3-9DCB-14551C304E5E}"
 EndProject
@@ -38,13 +33,15 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ms.students.domain", "ms.st
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ms.students.infrastructure", "ms.students\ms.students.infrastructure\ms.students.infrastructure.csproj", "{277437B4-C99E-4D56-BA7F-7AA1173E155A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ms.web.ui", "ms.web\ms.web.ui\ms.web.ui.csproj", "{0ED6B8DE-E498-4789-B4F7-0B25AE8C557D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ms.web.ui", "ms.web\ms.web.ui\ms.web.ui.csproj", "{0ED6B8DE-E498-4789-B4F7-0B25AE8C557D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ms.web.application", "ms.web\ms.web.application\ms.web.application.csproj", "{BD666D85-9C39-4DAF-A1D8-162A16596CEA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ms.web.application", "ms.web\ms.web.application\ms.web.application.csproj", "{BD666D85-9C39-4DAF-A1D8-162A16596CEA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ms.web.domain", "ms.web\ms.web.domain\ms.web.domain.csproj", "{B3A5A086-7A8C-4E70-B0B9-381F33DB71D3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ms.web.domain", "ms.web\ms.web.domain\ms.web.domain.csproj", "{B3A5A086-7A8C-4E70-B0B9-381F33DB71D3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ms.web.infrastructure", "ms.web\ms.web.infrastructure\ms.web.infrastructure.csproj", "{8A08AC58-6328-471B-BC9F-A79ACBC1C9E5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ms.web.infrastructure", "ms.web\ms.web.infrastructure\ms.web.infrastructure.csproj", "{8A08AC58-6328-471B-BC9F-A79ACBC1C9E5}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ms.rabbitmq", "ms.communications\ms.rabbitmq\ms.rabbitmq.csproj", "{D0DE2290-C46B-44A7-A420-7DA7EFEE51EF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -104,6 +101,10 @@ Global
 		{8A08AC58-6328-471B-BC9F-A79ACBC1C9E5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8A08AC58-6328-471B-BC9F-A79ACBC1C9E5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8A08AC58-6328-471B-BC9F-A79ACBC1C9E5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D0DE2290-C46B-44A7-A420-7DA7EFEE51EF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D0DE2290-C46B-44A7-A420-7DA7EFEE51EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D0DE2290-C46B-44A7-A420-7DA7EFEE51EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D0DE2290-C46B-44A7-A420-7DA7EFEE51EF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -113,7 +114,6 @@ Global
 		{D9066443-EBE1-4AF0-8659-352AC0BE660C} = {23EB1FF4-DC8F-4CE7-A670-7539912EB276}
 		{C8E315F5-6FD0-40CA-95BD-CFE42B6829F0} = {23EB1FF4-DC8F-4CE7-A670-7539912EB276}
 		{9CC3193B-B5A0-4ABF-B54A-932FE66C54B7} = {55F4DC60-8CDB-435A-85AB-FEFDFB42448B}
-		{3A42A043-9583-4342-827A-F007D9C0838A} = {55F4DC60-8CDB-435A-85AB-FEFDFB42448B}
 		{A86C6508-1FED-47D3-9DCB-14551C304E5E} = {AD7D4181-65C8-4EDC-9F41-7284F127199E}
 		{02F1A1FA-4928-4E5E-91D6-8799E7E8B8B4} = {AD7D4181-65C8-4EDC-9F41-7284F127199E}
 		{752E60CE-3519-44EB-8CFA-1B265025366C} = {AD7D4181-65C8-4EDC-9F41-7284F127199E}
@@ -126,6 +126,7 @@ Global
 		{BD666D85-9C39-4DAF-A1D8-162A16596CEA} = {9CC3193B-B5A0-4ABF-B54A-932FE66C54B7}
 		{B3A5A086-7A8C-4E70-B0B9-381F33DB71D3} = {9CC3193B-B5A0-4ABF-B54A-932FE66C54B7}
 		{8A08AC58-6328-471B-BC9F-A79ACBC1C9E5} = {9CC3193B-B5A0-4ABF-B54A-932FE66C54B7}
+		{D0DE2290-C46B-44A7-A420-7DA7EFEE51EF} = {C8E315F5-6FD0-40CA-95BD-CFE42B6829F0}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {DE39CABF-6560-4F2A-93A3-93618AEAC754}

@@ -28,13 +28,13 @@ namespace ms.web.ui.Controllers
             try
             {
                 //log in an existing user
-                var user = await _mediator.Send(new GetUserQuery(loginModel.Email, loginModel.Password));
+                var user = await _mediator.Send(new GetUserQuery(loginModel.Username, loginModel.Password));
 
                 //save the token to a session variable
                 if (user.Token is not null)
                 {
                     HttpContext.Session.SetString("_UserToken", user.Token);
-                    return RedirectToAction("Index", "Anime");
+                    return RedirectToAction("Index", "Student");
                 }
             }
             catch (Exception ex)
@@ -43,12 +43,6 @@ namespace ms.web.ui.Controllers
                 return View(loginModel);
             }
 
-            return View();
-        }
-
-
-        public IActionResult Privacy()
-        {
             return View();
         }
 
