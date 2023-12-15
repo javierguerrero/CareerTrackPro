@@ -17,7 +17,7 @@ namespace ms.web.ui.Controllers
             _mediator = mediator;
         }
 
-        public IActionResult Index()
+        public ActionResult Login()
         {
             return View();
         }
@@ -34,7 +34,7 @@ namespace ms.web.ui.Controllers
                 if (user.Token is not null)
                 {
                     HttpContext.Session.SetString("_UserToken", user.Token);
-                    return RedirectToAction("Index", "Student");
+                    return RedirectToAction("Index");
                 }
             }
             catch (Exception ex)
@@ -43,6 +43,17 @@ namespace ms.web.ui.Controllers
                 return View(loginModel);
             }
 
+            return View();
+        }
+
+        public IActionResult LogOut()
+        {
+            HttpContext.Session.Remove("_UserToken");
+            return RedirectToAction("Login");
+        }
+
+        public IActionResult Index()
+        {
             return View();
         }
 
