@@ -21,15 +21,23 @@ namespace ms.web.application.Queries.Handlers
 
         public async Task<UserResponse> Handle(GetUserQuery request, CancellationToken cancellationToken)
         {
-            var loginResponse = await _authtenticationApiCommunication.Login(new AuthenticationApiCommunicationRequest { Username = request.username, Password = request.password });
-            var user = new UserResponse
+            try
             {
-                Username = request.username,
-                Token = loginResponse.Token,
-                Expiration = loginResponse.Expiration,
-            };
+                var loginResponse = await _authtenticationApiCommunication.Login(new AuthenticationApiCommunicationRequest { Username = request.username, Password = request.password });
+                var user = new UserResponse
+                {
+                    Username = request.username,
+                    Token = loginResponse.Token,
+                    Expiration = loginResponse.Expiration,
+                };
 
-            return user;
+                return user;
+            }
+            catch (Exception ex)
+            {
+
+                throw;
+            }
         }
     }
 }

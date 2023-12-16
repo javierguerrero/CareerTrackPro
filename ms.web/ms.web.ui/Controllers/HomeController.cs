@@ -23,7 +23,7 @@ namespace ms.web.ui.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> SignIn(LoginModel loginModel)
+        public async Task<IActionResult> Login(LoginModel loginModel)
         {
             try
             {
@@ -36,14 +36,13 @@ namespace ms.web.ui.Controllers
                     HttpContext.Session.SetString("_UserToken", user.Token);
                     return RedirectToAction("Index");
                 }
+                return View("Login");
             }
             catch (Exception ex)
             {
                 ModelState.AddModelError(String.Empty, ex.Message);
                 return View(loginModel);
             }
-
-            return View();
         }
 
         public IActionResult LogOut()

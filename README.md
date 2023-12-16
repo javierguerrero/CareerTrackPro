@@ -1,4 +1,4 @@
-# MusicSchool - Software Guidebook
+# CareerTrack Pro - Software Guidebook
 
 ## Introduction
 
@@ -27,15 +27,15 @@ Mantenimiento Alumno
 - Obtener alumno
 - Eliminar alumno
 
-Mantenimiento Ciclo
+Mantenimiento Empresas
 
-- Agregar ciclo
-- Actualizar ciclo
-- Finalizar ciclo
-- Eliminar ciclo
-- Agregar clase
-- Actualizar clase
-- Eliminar clase
+- Agregar empresa
+- Actualizar empresa
+- Finalizar empresa
+- Eliminar empresa
+- Agregar empresa
+- Actualizar empresa
+- Eliminar empresa
 
 ## Authenticated User
 
@@ -79,7 +79,7 @@ https://www.figma.com/file/0NCDjQfKfM1PCLkrDYVuWL/Escuela-de-M%C3%BAsica?type=de
 
 ### Levantar entorno de desarrollo
 
-1. Ingresar a la carpeta raíz del proyecto "MusicSchool"
+1. Ingresar a la carpeta raíz del proyecto "CareerTrackPro"
 2. Abrir consola y ejecutar comando "docker-compose" para el despliegue de contenedores en Docker
 
 ```
@@ -127,3 +127,5 @@ ms.sql.students.db
 ```
 localhost,1418
 ```
+
+Nota: Es probable que las BDs no haya sido creadas. Por ejemplo, la BD Usuarios es importante para registrar y autentiar usuarios. Correr las Migrations desde el proyecto "ms.users" (Default project: ms.users.api)

@@ -5,7 +5,7 @@ services:
     container_name: ms.sql.users.db
     restart: always
     volumes:
-      - /c/data/docker/musicschool/sqlserver/users:/var/opt/mssql/data
+      - /c/data/docker/careertrackpro/sqlserver/users:/var/opt/mssql/data
     ports:
       - "1417:1433"
     environment:
@@ -16,7 +16,7 @@ services:
     container_name: ms.sql.students.db
     restart: always
     volumes:
-      - /c/data/docker/musicschool/sqlserver/students:/var/opt/mssql/data
+      - /c/data/docker/careertrackpro/sqlserver/students:/var/opt/mssql/data
     ports:
       - "1418:1433"
     environment:
@@ -59,6 +59,6 @@ services:
   ms.web:
     container_name: ms.web
     ports:
-      - "4300:80"
+      - "4300:8080"
     depends_on:
       - ms.users.api
