@@ -3,7 +3,11 @@ using Android.Runtime;
 
 namespace MusicSchool.Mobile
 {
-    [Application]
+
+    //TODO: https://github.com/dotnet/maui/issues/8379, https://www.youtube.com/watch?v=kvNhLKuAySA
+
+    //[Application]
+    [Application(UsesCleartextTraffic = true)]
     public class MainApplication : MauiApplication
     {
         public MainApplication(IntPtr handle, JniHandleOwnership ownership)

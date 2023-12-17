@@ -29,14 +29,14 @@ namespace MusicSchool.Mobile.Services
             Preferences.Default.Remove(AuthStateKey);
         }
 
-        public void SettUserUID(string id)
+        public void SetToken(string token)
         {
-            Preferences.Default.Set("UserUID", id);
+            Preferences.Default.Set("Token", token);
         }
 
-        public string GetUserUID()
+        public string GetToken()
         {
-            return Preferences.Default.Get("UserUID", string.Empty);
+            return Preferences.Default.Get("Token", string.Empty);
         }
     }
 }

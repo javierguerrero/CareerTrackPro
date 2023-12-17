@@ -4,10 +4,13 @@
              x:Class="MusicSchool.Mobile.Views.LoginPage"
              Shell.NavBarIsVisible="False"
              Title="LoginPage">
-    <VerticalStackLayout VerticalOptions="Center" Margin="30">
-        <Label Text="Por favor, ingresar los datos para iniciar sesión" />
-        <Entry Placeholder="Correo electrónico" Text="{Binding Email}" />
-        <Entry IsPassword="True" Placeholder="Tu contraseña" Text="{Binding Password}" />
-        <Button Text="Ingresar" Command="{Binding LoginTapCommand}" Margin="10" />
+    <VerticalStackLayout HorizontalOptions="Center" VerticalOptions="Center" Margin="30">
+        <Label Text="CareerTrack Pro" FontSize="Large" Margin="0,20" />
+        <Label Text="Welcome! Please enter your username and password to log in:" />
+        
+        <Entry Placeholder="User name" Text="{Binding Username}" />
+        <Entry Placeholder="Password" Text="{Binding Password}" IsPassword="True" />
+        
+        <Button Text="Enter" Command="{Binding LoginTapCommand}" Margin="10" />
     </VerticalStackLayout>
 </ContentPage>

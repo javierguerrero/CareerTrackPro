@@ -6,7 +6,7 @@ public partial class StudentsPage : ContentPage
 {
 	public StudentsPage()
 	{
-		InitializeComponent();
-        BindingContext = new StudentsViewModel(this.Navigation);
+		//InitializeComponent();
+  //      BindingContext = new StudentsViewModel(this.Navigation);
     }
 }
