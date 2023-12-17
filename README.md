@@ -14,18 +14,30 @@
 
 ### Administrator
 
-Seguridad
+Security Module
 
-- Inicio de sesión
-- Cerrar sesión
-- Cambiar contraseña
+- Login
+- Logout
+- Change password
 
-Mantenimiento Alumno
+JobSeeker Module
 
-- Agregar alumno
-- Actualizar alumno
-- Obtener alumno
-- Eliminar alumno
+- Update JobSeeker
+- Get JobSeekers
+- Delete JobSeeker
+
+## Job Seeker
+
+Security Module
+
+- Register
+- Login
+- Logout
+
+
+
+
+
 
 Mantenimiento Empresas
 
@@ -37,13 +49,6 @@ Mantenimiento Empresas
 - Actualizar empresa
 - Eliminar empresa
 
-## Authenticated User
-
-Seguridad
-
-- Inicio de sesión
-- Cerrar sesión
-- Cambiar contraseña
 
 https://www.figma.com/file/0NCDjQfKfM1PCLkrDYVuWL/Escuela-de-M%C3%BAsica?type=design&node-id=0-1&mode=design&t=VXOFeb1Tfw8db5vj-0
 
