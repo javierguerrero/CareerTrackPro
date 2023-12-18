@@ -41,7 +41,7 @@ namespace ms.users.api.Consumers
             _connection = factory.CreateConnection();
             var channel = _connection.CreateModel();
 
-            var queue = typeof(StudentCreatedEvent).Name;
+            var queue = typeof(JobSeekerCreatedEvent).Name;
 
             channel.QueueDeclare(queue, durable: true, exclusive: false, autoDelete: false, null);
 
@@ -53,10 +53,10 @@ namespace ms.users.api.Consumers
 
         private async void ReceivedEvent(object sender, BasicDeliverEventArgs e)
         {
-            if (e.RoutingKey == typeof(StudentCreatedEvent).Name)
+            if (e.RoutingKey == typeof(JobSeekerCreatedEvent).Name)
             {
                 var message = Encoding.UTF8.GetString(e.Body.Span);
-                var studentCreatedEvent = JsonSerializer.Deserialize<StudentCreatedEvent>(message);
+                var studentCreatedEvent = JsonSerializer.Deserialize<JobSeekerCreatedEvent>(message);
 
                 //TODO: en este punto tengo que usar ASP.NET Identity para crear un nuevo usario.
                 //TODO: Refactorizar código para seguir una arquitectura limpia.

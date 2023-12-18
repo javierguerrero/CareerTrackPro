@@ -113,7 +113,7 @@ Users Authentication Api
 http://localhost:9010/swagger
 ```
 
-Students Api
+JobSeekers Api
 
 ```
 http://localhost:9020/swagger
@@ -127,10 +127,14 @@ ms.sql.users.db
 localhost,1417
 ```
 
-ms.sql.students.db
+ms.sql.jobseekers.db
 
 ```
 localhost,1418
 ```
 
-Nota: Es probable que las BDs no haya sido creadas. Por ejemplo, la BD Usuarios es importante para registrar y autentiar usuarios. Correr las Migrations desde el proyecto "ms.users" (Default project: ms.users.api)
+Notas: 
+* Es probable que las BDs no haya sido creadas. Por ejemplo, la BD Usuarios es importante para registrar y autentiar usuarios. Correr las Migrations desde el proyecto "ms.users" (Default project: ms.users.api).
+* La tabla "jobseekers" tiene el campo "UserName" para que tenga una relación con el usuario del microservicio de autenticación.
+* Todo se origina desde el manejador de creación de JobSeekers, del microservicio JobSeekers, CreateJobSeekerCommandHandler, de la capa de aplicación, donde tras la satisfactoria creación del JobSeeker en la base de datos de SQL Server, queremos crearle al JobSeeker un usuario en el microservicio de usuarios, publicando para ello el evento que se almacenará en la cola JobSeekerCreatedEvent, donde posteriormente el consumidor de usuarios interpretará el evento encolado.
+

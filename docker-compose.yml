@@ -4,7 +4,7 @@ services:
   ms.sql.users.db:
     image: mcr.microsoft.com/mssql/server
 
-  ms.sql.students.db:
+  ms.sql.jobseekers.db:
     image: mcr.microsoft.com/mssql/server
 
   ms.users.api:
@@ -13,11 +13,11 @@ services:
       context: .
       dockerfile: ms.users/ms.users.api/Dockerfile
 
-  ms.students.api:
-    image: ${DOCKER_REGISTRY-}msstudents
+  ms.jobseekers.api:
+    image: ${DOCKER_REGISTRY-}msjobseekers
     build:
       context: .
-      dockerfile: ms.students/ms.students.api/Dockerfile
+      dockerfile: ms.jobseekers/ms.jobseekers.api/Dockerfile
 
   ms.spa:
     image: ${DOCKER_REGISTRY-}msspa
