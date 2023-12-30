@@ -52,10 +52,10 @@ builder.Services.AddSwaggerGen(swagger =>
 
 
 // For Entity Framework
-var connectionString = $"Server={configuration.GetConnectionString("StudentDB:HostName")};" +
-                                $"Database={configuration.GetConnectionString("StudentDB:Catalogue")};" +
-                                $"User ID={configuration.GetConnectionString("StudentDB:User")};" +
-                                $"Password={configuration.GetConnectionString("StudentDB:Password")};" +
+var connectionString = $"Server={configuration.GetConnectionString("JobSeekerDB:HostName")};" +
+                                $"Database={configuration.GetConnectionString("JobSeekerDB:Catalogue")};" +
+                                $"User ID={configuration.GetConnectionString("JobSeekerDB:User")};" +
+                                $"Password={configuration.GetConnectionString("JobSeekerDB:Password")};" +
                                 $"Encrypt=False;MultipleActiveResultSets=True;";
 builder.Services.AddDbContext<JobSeekerContext>(options => options.UseSqlServer(connectionString));
 

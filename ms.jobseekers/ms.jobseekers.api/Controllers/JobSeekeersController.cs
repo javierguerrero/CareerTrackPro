@@ -4,7 +4,6 @@ using Microsoft.AspNetCore.Mvc;
 using ms.jobseekers.application.Commands;
 using ms.jobseekers.application.Queries;
 using ms.jobseekers.application.Requests;
-using System.Data;
 
 namespace ms.jobseekers.api.Controllers
 {
@@ -22,12 +21,11 @@ namespace ms.jobseekers.api.Controllers
         public async Task<IActionResult> GetAllJobSeekers()
             => Ok(await _mediator.Send(new GetAllJobSeekersQuery()));
 
-        [Authorize(Roles = "Admin")]
         [HttpPost]
         [Route("[action]")]
-        public async Task<IActionResult> CreateJobSeeker([FromBody] CreateJobSeekerRequest jobSeeker) =>
-            Ok(await _mediator.Send(new CreateJobSeekerCommand(jobSeeker.UserName, jobSeeker.FirstName, 
-                                                             jobSeeker.LastName, jobSeeker.Email,
-                                                             jobSeeker.Password, jobSeeker.Role)));
+        public async Task<IActionResult> CreateJobSeeker([FromBody] CreateJobSeekerRequest jobSeeker)
+        {
+            return Ok(await _mediator.Send(new CreateJobSeekerCommand(jobSeeker.UserName, jobSeeker.FirstName, jobSeeker.LastName, jobSeeker.Email, jobSeeker.Password, jobSeeker.Role)));
+        }
     }
 }

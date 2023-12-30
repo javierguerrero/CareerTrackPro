@@ -24,7 +24,7 @@ namespace ms.jobseekers.infrastructure.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Students", x => x.Id);
+                    table.PrimaryKey("PK_JobSeekers", x => x.Id);
                 });
 
             migrationBuilder.InsertData(

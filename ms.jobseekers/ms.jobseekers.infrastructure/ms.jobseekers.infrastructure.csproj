@@ -18,4 +18,8 @@
     <ProjectReference Include="..\ms.jobseekers.domain\ms.jobseekers.domain.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Migrations\" />
+  </ItemGroup>
+
 </Project>

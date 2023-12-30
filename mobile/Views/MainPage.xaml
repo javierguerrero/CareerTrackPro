@@ -7,6 +7,8 @@
     <ScrollView>
         <VerticalStackLayout Padding="20" Spacing="20">
             <Label Text="hola" />
+
+            <Button Text="Logout" Clicked="Button_Logout"  />
         </VerticalStackLayout>
     </ScrollView>
 

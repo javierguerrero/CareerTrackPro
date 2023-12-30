@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MusicSchool.Mobile.Views.LoginPage"
              Shell.NavBarIsVisible="False"
-             Title="LoginPage">
+             Title="Login">
     <VerticalStackLayout HorizontalOptions="Center" VerticalOptions="Center" Margin="30">
         <Label Text="CareerTrack Pro" FontSize="Large" Margin="0,20" />
         <Label Text="Welcome! Please enter your username and password to log in:" />
@@ -12,5 +12,7 @@
         <Entry Placeholder="Password" Text="{Binding Password}" IsPassword="True" />
         
         <Button Text="Enter" Command="{Binding LoginTapCommand}" Margin="10" />
+        <Button Text="Register" Command="{Binding RegisterTapCommand}" Margin="10" />
+        
     </VerticalStackLayout>
 </ContentPage>

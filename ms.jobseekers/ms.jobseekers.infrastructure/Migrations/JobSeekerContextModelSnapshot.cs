@@ -2,7 +2,6 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
-using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using ms.jobseekers.infrastructure.Data;
 
@@ -11,11 +10,9 @@ using ms.jobseekers.infrastructure.Data;
 namespace ms.jobseekers.infrastructure.Migrations
 {
     [DbContext(typeof(JobSeekerContext))]
-    [Migration("20230708194600_init")]
-    partial class init
+    partial class JobSeekerContextModelSnapshot : ModelSnapshot
     {
-        /// <inheritdoc />
-        protected override void BuildTargetModel(ModelBuilder modelBuilder)
+        protected override void BuildModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -24,7 +21,7 @@ namespace ms.jobseekers.infrastructure.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("ms.students.domain.Entities.JobSeeker", b =>
+            modelBuilder.Entity("ms.jobseekers.domain.Entities.JobSeeker", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
