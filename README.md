@@ -38,15 +38,22 @@ User Story: Register user
     I want to register on the CareerTrackPro website
     So that I can keep track of all my applications
 
-Rule: Register user with required fields username, password, firstname, lastname and email
+Rule: Required fields username, password, firstname, lastname and email
     Example: Complete required fields
         * Javier chooses "register"
-        * Enters required fields username('jguerrero'), password('******'), firstname('Javier'), lastname('Guerrero') and email('jguerrero@demo.com')
+        * Enters required fields
+            username('jguerrero')
+            password('******')
+            firstname('Javier')
+            lastname('Guerrero')
+            email('jguerrero@demo.com')
         * Save data
         * Successful registration
     Example: Do not complete required fields
         * Javier chooses "Register"
-        * Enters required fields username('jguerrero'), password('******')
+        * Enters required fields
+            username('jguerrero')
+            password('******')
         * Save data
         * Error msg. Please complete all required fields
 Rule: Only valid password is accepted
