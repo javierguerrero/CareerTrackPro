@@ -67,35 +67,99 @@ Rule: Only valid password is accepted
         * Error msg. Invalid password
 ```
 
-Security Module
+```
+User Story: Login user
+    As a JobSeeker
+    I want to log in to the CareerTrackPro website
+    So that I can access my account and manage my applications
 
-- Register
-- Login
-- Logout
+Rule: Required fields for login - username and password
+    Example: Successful login
+        * Javier navigates to the login page
+        * Enters username('jguerrero') and password('P@ssw0rd')
+        * Submits login form
+        * Successfully logs in and gains access to the account
+    Example: Incorrect username or password
+        * Javier navigates to the login page
+        * Enters username('jguerrero') and an incorrect password('incorrect')
+        * Submits login form
+        * Receives an error message indicating incorrect credentials
 
-Mantenimiento Empresas
+Rule: Account status considerations
+    Example: Inactive account login attempt
+        * Javier attempts to log in with an inactive account
+        * Enters username('inactive_user') and password('P@ssw0rd')
+        * Submits login form
+        * Receives an error message indicating the account is inactive
+    Example: Locked account login attempt
+        * Javier tries to log in with a locked account
+        * Enters username('locked_user') and password('P@ssw0rd')
+        * Submits login form
+        * Receives an error message indicating the account is locked
+```
 
-- Agregar empresa
-- Actualizar empresa
-- Finalizar empresa
-- Eliminar empresa
-- Agregar empresa
-- Actualizar empresa
-- Eliminar empresa
+```
+User Story: Logout user
+    As a JobSeeker
+    I want to log out of the CareerTrackPro website
+    So that I can secure my account and leave the session
+
+Rule: Logging out successfully
+    Example: Normal logout process
+        * Javier is logged in and navigates to the logout option
+        * Clicks on "Logout" or similar action
+        * Confirms the logout action
+        * Successfully logs out and is redirected to the login or home page
+    Example: Logout without confirmation
+        * Javier clicks on "Logout" but accidentally closes the tab or browser
+        * Attempts to log back in
+        * Finds the session has already been terminated
+```
+
+```
+User Story: Add job application
+    As a JobSeeker
+    I want to add a new job application
+    So that I can track my application progress
+
+Rule: Required fields when adding an application - position, organization, description
+    Example: Successful addition of an application
+        * Javier chooses the "Add Application" option
+        * Enters
+            position('Software Engineer')
+            organization('TechCorp')
+            description('job description')
+        * Submits application
+        * Application is successfully added and appears in the application list
+    Example: Missing required fields
+        * Javier tries to add an application without providing the position
+        * Submits the form
+        * Receives an error message prompting to fill in the missing position field
+
+Rule: Optional fields when adding an application - City, Link to job offer, Salary, Contact details, Stage, Notes
+* Example: Adding optional application status and notes
+* Javier adds an application with status('Pending') and notes('Had initial interview, awaiting response')
+* Submits application
+* Application is added with the provided status and notes
+
+Rule: Editing an existing application
+    Example: Editing application details
+        * Javier selects an existing application
+        * Edits the position to 'Senior Software Engineer' and updates the application status to 'Interview'
+        * Saves changes
+        * Application details are successfully updated
+
+```
+
+```
+
+```
 
 ### Admin
-
-Security Module
 
 - Login
 - Logout
 - Change password
-
-JobSeeker Module
-
-- Update JobSeeker
-- Get JobSeekers
-- Delete JobSeeker
 
 https://www.figma.com/file/0NCDjQfKfM1PCLkrDYVuWL/Escuela-de-M%C3%BAsica?type=design&node-id=0-1&mode=design&t=VXOFeb1Tfw8db5vj-0
 
