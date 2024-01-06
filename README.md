@@ -136,11 +136,17 @@ Rule: Required fields when adding an application - position, organization, descr
         * Submits the form
         * Receives an error message prompting to fill in the missing position field
 
-Rule: Optional fields when adding an application - City, Link to job offer, Salary, Contact details, Stage, Notes
-* Example: Adding optional application status and notes
-* Javier adds an application with status('Pending') and notes('Had initial interview, awaiting response')
-* Submits application
-* Application is added with the provided status and notes
+Rule: Optional fields when adding an application - City, LinkToJobOffer, Salary, ContactDetails, Stage, Notes
+    Example: Adding optional application status and notes
+        * Javier adds an application with
+            City('Lima')
+            LinkToJobOffer('https://www.demo.com/job/179')
+            Salary('5500')
+            ContactDetails('John Doe')
+            Stage('Interview')
+            Notes('Had initial interview, awaiting response')
+        * Submits application
+        * Application is added with the provided optional fields
 
 Rule: Editing an existing application
     Example: Editing application details
@@ -148,10 +154,6 @@ Rule: Editing an existing application
         * Edits the position to 'Senior Software Engineer' and updates the application status to 'Interview'
         * Saves changes
         * Application details are successfully updated
-
-```
-
-```
 
 ```
 
