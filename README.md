@@ -208,7 +208,7 @@ The CareerTrackPro website should work consistently across the following browser
 ### Levantar entorno de desarrollo
 
 1. Ingresar a la carpeta raíz del proyecto "CareerTrackPro"
-2. Abrir consola y ejecutar comando "docker-compose" para el despliegue de contenedores en Docker
+2. Abrir consola y ejecutar el siguiente comando para el despliegue de contenedores en Docker
 
 ```
 docker-compose -f docker-compose.yml -f docker-compose.override.yml up -d

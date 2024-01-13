@@ -23,6 +23,17 @@ services:
       SA_PASSWORD: ".123Pass456."
       ACCEPT_EULA: "Y"
 
+  ms.sql.jobapplications.db:
+    container_name: ms.sql.jobapplications.db
+    restart: always
+    volumes:
+      - /c/data/docker/careertrackpro/sqlserver/jobapplications:/var/opt/mssql/data
+    ports:
+      - "1419:1433"
+    environment:
+      SA_PASSWORD: ".123Pass456."
+      ACCEPT_EULA: "Y"
+
   ms.users.api:
     container_name: ms.users.api
     environment:
@@ -48,6 +59,19 @@ services:
       - "9020:80"
     depends_on:
       - ms.sql.jobseekers.db
+
+  ms.jobapplications.api:
+    container_name: ms.jobapplications.api
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - "ConnectionStrings:StudentDB:HostName=ms.sql.jobapplications.db"
+      - "ConnectionStrings:StudentDB:Catalogue=JobApplications"
+      - "ConnectionStrings:StudentDB:User=sa"
+      - "ConnectionStrings:StudentDB:Password=.123Pass456."
+    ports:
+      - "9030:80"
+    depends_on:
+      - ms.sql.jobapplications.db
 
   ms.spa:
     container_name: ms.spa

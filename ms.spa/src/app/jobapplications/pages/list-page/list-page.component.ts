@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { JobApplication } from '../../interfaces/jobapplication.interface';
-import { ApplicationService } from '../../services/jobapplication.service';
+import { JobApplicationService } from '../../services/jobapplication.service';
 
 @Component({
   selector: 'app-list-page',
@@ -8,13 +8,13 @@ import { ApplicationService } from '../../services/jobapplication.service';
   styles: [],
 })
 export class ListPageComponent implements OnInit {
-  public applications: JobApplication[] = [];
+  public jobApplications: JobApplication[] = [];
 
-  constructor(private applicationService: ApplicationService) {}
+  constructor(private jobApplicationService: JobApplicationService) {}
 
   ngOnInit(): void {
-    this.applicationService
+    this.jobApplicationService
       .getApplications()
-      .subscribe((applications) => (this.applications = applications));
+      .subscribe((jobApplications) => (this.jobApplications = jobApplications));
   }
 }

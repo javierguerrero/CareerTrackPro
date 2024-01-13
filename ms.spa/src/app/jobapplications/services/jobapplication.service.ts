@@ -5,7 +5,7 @@ import { JobApplication } from '../interfaces/jobapplication.interface';
 import { environments } from 'src/environments/environments';
 
 @Injectable({ providedIn: 'root' })
-export class ApplicationService {
+export class JobApplicationService {
   private baseUrl: string = environments.baseUrl;
 
   constructor(private http: HttpClient) {}

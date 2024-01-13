@@ -7,6 +7,9 @@ services:
   ms.sql.jobseekers.db:
     image: mcr.microsoft.com/mssql/server
 
+  ms.sql.jobapplications.db:
+    image: mcr.microsoft.com/mssql/server
+
   ms.users.api:
     image: ${DOCKER_REGISTRY-}msusers
     build:
@@ -18,6 +21,12 @@ services:
     build:
       context: .
       dockerfile: ms.jobseekers/ms.jobseekers.api/Dockerfile
+
+  ms.jobapplications.api:
+    image: ${DOCKER_REGISTRY-}msjobapplications
+    build:
+      context: .
+      dockerfile: ms.jobapplications/ms.jobapplications.api/Dockerfile
 
   ms.spa:
     image: ${DOCKER_REGISTRY-}msspa
