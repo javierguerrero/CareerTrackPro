@@ -10,7 +10,7 @@ const routes: Routes = [
   {
     path: 'applications',
     loadChildren: () =>
-      import('./applications/applications.module').then(
+      import('./jobapplications/jobapplications.module').then(
         (m) => m.ApplicationsModule
       ),
   },

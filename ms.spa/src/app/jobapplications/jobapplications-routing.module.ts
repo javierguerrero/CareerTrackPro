@@ -3,9 +3,9 @@ import { RouterModule, Routes } from '@angular/router';
 import { LayoutPageComponent } from './pages/layout-page/layout-page.component';
 import { NewPageComponent } from './pages/new-page/new-page.component';
 import { ListPageComponent } from './pages/list-page/list-page.component';
-import { ApplicationPageComponent } from './pages/application-page/application-page.component';
+import { ApplicationPageComponent } from './pages/jobapplication-page/jobapplication-page.component';
 
-// localhost:4200/applications
+// localhost:4200/jobapplications
 const routes: Routes = [
   {
     path: '',

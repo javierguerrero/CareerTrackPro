@@ -1,0 +1,6 @@
+@ms.jobapplications.api_HostAddress = http://localhost:5018
+
+GET {{ms.jobapplications.api_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
