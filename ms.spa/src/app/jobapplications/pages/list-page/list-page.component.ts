@@ -14,7 +14,7 @@ export class ListPageComponent implements OnInit {
 
   ngOnInit(): void {
     this.jobApplicationService
-      .getApplications()
+      .getJobApplications()
       .subscribe((jobApplications) => (this.jobApplications = jobApplications));
   }
 }

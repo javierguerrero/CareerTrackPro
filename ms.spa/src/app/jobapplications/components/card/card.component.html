@@ -11,7 +11,7 @@
     <button
       mat-button
       mat-raised
-      [routerLink]="['/applications/edit', jobApplication.Position]"
+      [routerLink]="['/jobapplications/edit', jobApplication.Id]"
       color="primary"
     >
       <mat-icon>edit</mat-icon>
@@ -21,7 +21,7 @@
     <button
       mat-button
       mat-raised
-      [routerLink]="['/applications', jobApplication.Position]"
+      [routerLink]="['/jobapplications', jobApplication.Id]"
     >
       <mat-icon>more_horiz</mat-icon>
       More

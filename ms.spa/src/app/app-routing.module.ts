@@ -8,7 +8,7 @@ const routes: Routes = [
     loadChildren: () => import('./auth/auth.module').then((m) => m.AuthModule),
   },
   {
-    path: 'applications',
+    path: 'jobapplications',
     loadChildren: () =>
       import('./jobapplications/jobapplications.module').then(
         (m) => m.ApplicationsModule
@@ -20,7 +20,7 @@ const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: 'applications',
+    redirectTo: 'jobapplications',
     pathMatch: 'full',
   },
   {
