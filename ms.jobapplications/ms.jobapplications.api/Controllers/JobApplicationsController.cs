@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
+using ms.jobapplications.application.Requests;
 using ms.jobapplications.domain;
 using Newtonsoft.Json.Linq;
 
@@ -13,29 +14,6 @@ namespace ms.jobapplications.api.Controllers
         public JobApplicationsController(ILogger<JobApplicationsController> logger)
         {
             _logger = logger;
-        }
-
-        [HttpGet]
-        [Route("{id}")]
-        public async Task<IActionResult> GetJobApplication(int id)
-        {
-            var jobApplication = new JobApplication()
-            {
-                Id = 1,
-                Position = "Senior .Net Developer",
-                Organization = "Jobot",
-                City = "Lima",
-                LinkToJobOffer = "https://www.linkedin.com/jobs/view/3809172906/",
-                Salary = "100.000 $/año - 120.000 $/año",
-                ContactDetails = "",
-                Notes = ""
-            };
-
-            if (jobApplication is null)
-            {
-                return NotFound();
-            }
-            return Ok(jobApplication);
         }
 
         [HttpGet]
@@ -71,6 +49,73 @@ namespace ms.jobapplications.api.Controllers
             string jsonString = jsonArray.ToString();
 
             return Ok(jsonString);
+        }
+
+        [HttpGet]
+        [Route("{id}")]
+        public async Task<IActionResult> GetJobApplication(int id)
+        {
+            var jobApplication = new JobApplication()
+            {
+                Id = 1,
+                Position = "Senior .Net Developer",
+                Organization = "Jobot",
+                City = "Lima",
+                LinkToJobOffer = "https://www.linkedin.com/jobs/view/3809172906/",
+                Salary = "100.000 $/año - 120.000 $/año",
+                ContactDetails = "",
+                Notes = ""
+            };
+
+            if (jobApplication is null)
+            {
+                return NotFound();
+            }
+            return Ok(jobApplication);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> PostJobApplication([FromBody] CreateJobApplicationRequest jobApplication)
+        {
+            //TODO save job application
+
+            return CreatedAtAction(
+                "GetJobApplication",
+                new { id = 0 },
+                jobApplication);
+        }
+
+        [HttpPut]
+        [Route("{id}")]
+        public async Task<IActionResult> PutJobApplication(int id, [FromBody] CreateJobApplicationRequest jobApplication)
+        {
+            if (id != jobApplication.Id)
+            {
+                return BadRequest();
+            }
+
+            //TODO: update job application
+
+            return NoContent();
+        }
+
+        [HttpDelete]
+        [Route("{id}")]
+        public async Task<IActionResult> DeleteJobApplication(int id)
+        {
+            //TODO: Delete job application
+
+            return Ok();
+        }
+
+
+        [HttpPost]
+        [Route("Delete")]
+        public async Task<IActionResult> DeleteMultiple([FromQuery]int[] ids)
+        {
+            //TODO: Delete job application
+
+            return Ok();
         }
     }
 }

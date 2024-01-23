@@ -25,7 +25,17 @@ namespace ms.jobseekers.api.Controllers
         [Route("[action]")]
         public async Task<IActionResult> CreateJobSeeker([FromBody] CreateJobSeekerRequest jobSeeker)
         {
-            return Ok(await _mediator.Send(new CreateJobSeekerCommand(jobSeeker.UserName, jobSeeker.FirstName, jobSeeker.LastName, jobSeeker.Email, jobSeeker.Password, jobSeeker.Role)));
+            var result = await _mediator.Send(
+                new CreateJobSeekerCommand(
+                    jobSeeker.UserName, 
+                    jobSeeker.FirstName, 
+                    jobSeeker.LastName, 
+                    jobSeeker.Email, 
+                    jobSeeker.Password, 
+                    jobSeeker.Role
+                )
+            );
+            return Ok(result);
         }
     }
 }
