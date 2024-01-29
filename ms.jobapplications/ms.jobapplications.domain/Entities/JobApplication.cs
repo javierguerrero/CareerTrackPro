@@ -1,4 +1,4 @@
-﻿namespace ms.jobapplications.domain
+﻿namespace ms.jobapplications.domain.Entities
 {
     public class JobApplication
     {

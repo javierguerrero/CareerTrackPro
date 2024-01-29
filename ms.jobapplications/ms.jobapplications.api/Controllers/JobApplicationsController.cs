@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using ms.jobapplications.application.Requests;
 using ms.jobapplications.domain;
+using ms.jobapplications.domain.Entities;
 using Newtonsoft.Json.Linq;
 
 namespace ms.jobapplications.api.Controllers

@@ -1,6 +1,14 @@
+using ms.jobapplications.application;
+using ms.jobapplications.infrastructure;
+
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
+var configuration = builder.Configuration;
+
+builder.Services
+    .AddApplicationServices(configuration)
+    .AddInfrastructure(configuration);
+
 
 builder.Services.AddControllers().AddJsonOptions(options => {
     options.JsonSerializerOptions.PropertyNamingPolicy = null;

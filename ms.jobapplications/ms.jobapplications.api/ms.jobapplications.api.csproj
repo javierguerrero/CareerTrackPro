@@ -4,7 +4,7 @@
     <TargetFramework>net8.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
-    <InvariantGlobalization>true</InvariantGlobalization>
+    <InvariantGlobalization>false</InvariantGlobalization>
     <UserSecretsId>2ef78386-d305-47bc-853c-33e0ad55a791</UserSecretsId>
     <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
     <DockerfileContext>..\..</DockerfileContext>
@@ -19,6 +19,7 @@
   <ItemGroup>
     <ProjectReference Include="..\ms.jobapplications.application\ms.jobapplications.application.csproj" />
     <ProjectReference Include="..\ms.jobapplications.domain\ms.jobapplications.domain.csproj" />
+    <ProjectReference Include="..\ms.jobapplications.infrastructure\ms.jobapplications.infrastructure.csproj" />
   </ItemGroup>
 
 </Project>
